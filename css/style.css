@@ -8,7 +8,7 @@ body, html {
 }
 h1 {
 	font-weight: 700;
-    font color: coral;  
+    font color:coral;  
 }
 h1 strong {
 	font-weight: 900;
@@ -93,10 +93,14 @@ hr {
 	width: 70px;
 	text-align: center;
 	position: relative;
-	background: #00FFFF;
+	background: #048C94;
 	margin: 0 auto;
 	margin-bottom: 30px;
 	border: 0;
+}
+.clar{
+	font-size: 120px;
+	
 }
 /* Navigation */
 .navbar-custom {
@@ -110,7 +114,7 @@ hr {
 	font-weight: 600;
 }
 .navbar-custom .navbar-brand i.fa {
-	color: #00FFFF;
+	color:#048C94;
 }
 .navbar-custom .navbar-brand:focus {
 	outline: 0;
@@ -122,8 +126,8 @@ hr {
 	padding: 0 4px;
 }
 .navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
-	background-color: #00FFFF;
-	color: #00FFFF;
+	background-color: #048C94;
+	color: #048C94;
 }
 .navbar-custom .navbar-brand .navbar-toggle:focus, .navbar-custom .navbar-brand .navbar-toggle:active {
 	outline: 0;
@@ -138,13 +142,13 @@ hr {
 }
 .navbar-custom .nav li a:hover {
 	outline: 0;
-	color: #00FFFF;
+	color: #048C94;
 	background-color: transparent;
 }
 .navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
 	outline: 0;
 	background-color: transparent;
-	color: #00FFFF;
+	color: #048C94;
 }
 .navbar-custom .nav li.active {
 	outline: 0;
@@ -153,17 +157,97 @@ hr {
 	background-color: rgba(255,255,255,.3);
 }
 .navbar-custom .nav li.active a:hover {
-	color: orange;
+	color:#F38C2C
+	
+	
+	
+	;
 }
 /* Home Section */
+.gtco-section.border-bottom {
+	border-bottom: 1px solid #e6e6e6;
+  }
+  #gtco-features .feature-center {
+	color: #fff;
+  }
+  #gtco-features .feature-center .icon {
+	width: 90px;
+	height: 90px;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	background: #66D37E;
+  }
+  #gtco-features .feature-center .icon i {
+	color: #fff;
+	font-size: 40px;
+	font-style: normal;
+  }
+  #gtco-features .feature-center h3 {
+	font-weight: 400;
+	color: #fff;
+  }
+  #gtco-features .feature-center p {
+	color: rgba(255, 255, 255, 0.7);
+  }
+  .feature-center {
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	width: 100%;
+	margin-bottom: 40px;
+  }
+  @media screen and (max-width: 768px) {
+	.feature-center {
+	  margin-bottom: 50px;
+	}
+  }
+  .feature-center .icon {
+	width: 90px;
+	height: 90px;
+	display: table;
+	text-align: center;
+	margin: 0 auto 40px auto;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+  }
+  .feature-center .icon i {
+	display: table-cell;
+	vertical-align: middle;
+	height: 90px;
+	font-size: 40px;
+	line-height: 40px;
+	color: #cccccc;
+  }
+  .feature-center p, .feature-center h3 {
+	margin-bottom: 30px;
+  }
+  .feature-center h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #66D37E;
+	position: relative;
+  }  
+.gtco-section {
+	padding: 7em 0;
+	clear: both;
+	position: relative;
+  }
+  @media screen and (max-width: 768px) {
+
+	.gtco-section {
+	  padding: 2em 0;
+	}
+  }
 #intro {
 	display: table;
 	width: 100%;
 	height: auto;
 	padding: 100px 0;
 	text-align: center;
-	color: orange;
-	background: url(../img/intro-bg.jpg) no-repeat center center fixed;
+	color: #F38C2C;
+	background: url(../img/78900.png) no-repeat center center fixed;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -177,11 +261,12 @@ hr {
 #intro .intro-body H1 {
 	font-size: 76px;
 	font-weight: 700;
-	color: orange;
+	color: #F38C2C(10, 10, 9);
 	text-transform: uppercase;
+	
 }
 #intro .intro-body .brand-heading {
-	color: #00FFFF;
+	color:#048C94		;
 	text-shadow: 0 4px black;
 }
 #intro .intro-body .intro-text {
@@ -198,7 +283,7 @@ hr {
 	font-size: 18px;
 	letter-spacing: 1px;
 	margin-bottom: 100px;
-	color: orange;
+	color: #F38C2C	;
 }
 }
 
@@ -289,8 +374,8 @@ hr {
 ------------------------------ */
 
 .btn-default {
-	color: #00FFFF;
-	background: #cf5022;
+	color: rgb(5, 78, 82)	;
+	background: #F38C2C;
 	border: 0;
 	padding: 12px 24px;
 	margin: 0 8px;
@@ -298,8 +383,8 @@ hr {
 	transition: all 0.5s;
 }
 .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
-	color: #000FFFF ;
-	background-color: #a13e1a;
+	color: black;
+	background-color: rgb(168, 100, 37);
 }
 .section-title.center {
 	padding: 30px 0;
@@ -328,7 +413,7 @@ hr {
 	content: "✓";
 	font-weight: 600;
 	padding-right: 10px;
-	color: #00FFFF;
+	color: #048C94	;
 }
 #about i.fa {
 	float: left;
@@ -371,7 +456,7 @@ hr {
 }
 #services i.fa { 
 	font-size: 36px;
-	color: #E75926;
+	color: #F38C2C;
 	transition: all 0.5s;
 }
 /* Gallery Section */
@@ -398,13 +483,13 @@ ol.type li a {
 }
 ol.type li a.active {
 	color: #f6f6f6;
-	border: 1px solid #cf5022;
-	background: #cf5022;
+	border: 1px solid #F38C2C;
+	background: #F38C2C;
 }
 ol.type li a:hover {
 	color: #f6f6f6;
-	border: 1px solid #cf5022;
-	background: #cf5022;
+	border: 1px solid #F38C2C;
+	background: #F38C2C;
 }
 .isotope-item {
 	z-index: 2
@@ -572,11 +657,11 @@ img.img-thumbnail.team-img {
 }
 #contact i.fa {
 	font-size: 22px;
-	color: #e75926;
+	color: #F38C2C;
 	margin-bottom: 10px;
 }
 #contact .text-danger {
-	color: #ff3333;
+	color: #F38C2C;
 	text-align: left;
 }
 label {
@@ -609,7 +694,7 @@ label {
 	box-shadow: transparent;
 }
 #contact .btn-default {
-	background: #cf5022;
+	background: #F38C2C;
 	border: 0;
 	border-radius: 4px;
 	padding: 10px 20px;
@@ -619,7 +704,7 @@ label {
 }
 #contact .btn-default:hover, #contact .btn-default:focus {
 	color: #f6f6f6;
-	background: #a13e1a;
+	background: #F38C2C;
 }
 .btn:active, .btn.active {
 	background-image: none;
@@ -641,12 +726,12 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #contact .social i.fa {
 	font-size: 24px;
 	padding-top: 8px;
-	color: #cf5022;
+	color: #F38C2C;
 	border-radius: 4px;
 	transition: all 0.3s;
 }
 #contact .social i.fa:hover {
-	color: #a13e1a;
+	color: #F38C2C;
 }
 /* Footer Section*/
 #footer {
@@ -659,7 +744,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	color: #999999;
 }
 #footer a:hover, a:focus {
-	color: #e75926;
+	color: #F38C2C;
 }
 #footer p {
 	font-size: 13px;
