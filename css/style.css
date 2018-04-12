@@ -5,10 +5,11 @@ body, html {
 	color: #777;
 	width: 100% !important;
 	height: 100% !important;
+	overflow-x: hidden;
 }
 h1 {
 	font-weight: 700;
-    font color:coral;  
+    color:coral;
 }
 h1 strong {
 	font-weight: 900;
@@ -63,6 +64,102 @@ ul, ol {
 }
 .clearfix {
 	display: block;
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 #preloader {
 	position: fixed;
@@ -233,6 +330,8 @@ hr {
 	padding: 7em 0;
 	clear: both;
 	position: relative;
+	background-color: 
+	#edd5ff;
   }
   @media screen and (max-width: 768px) {
 
@@ -246,13 +345,59 @@ hr {
 	height: auto;
 	padding: 100px 0;
 	text-align: center;
-	color: #F38C2C;
-	background: url(../img/78900.png) no-repeat center center fixed;
+	color: orangered;
+	/* background: url(../img/ba5.jpg) no-repeat center center fixed;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-	-o-background-size: cover;
+	-o-background-size: cover; */
+	margin: 0;
+}
+#video-bg-elem{
+	position: absolute;
+	top: 0%;
+	left: 0;
+	min-height: 100%;
+	min-width: 100%;
+}
+/* .content{
+
+	position: center;
+	width: 100%;
+	height: 100%;
+	min-height: 100;
+	z-index: 1000;
+	background-color: rgba(0,0, 0, 0.7);
+} */
+.content h1{
+	text-align: center;
+	font-size: 200px;
+	text-transform: uppercase;
+	font-weight: 800;
+	padding-top:10%;
+	margin-bottom: 30px;
+	color: orangered;
+
+}
+.content h3{
+	text-align: center;
+	font-size: 90px;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding-top:5%;
+	margin-bottom: 10px;
+	color: seagreen;
+}
+.background-wrap{
+	position: fixed;
+	z-index: -1000;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+
 }
 #intro .intro-body {
 	display: table-cell;
@@ -261,13 +406,16 @@ hr {
 #intro .intro-body H1 {
 	font-size: 76px;
 	font-weight: 700;
+	/* font-family: ubuntu; */
 	color: #F38C2C(10, 10, 9);
 	text-transform: uppercase;
+	font-family: ubuntu;
 	
 }
 #intro .intro-body .brand-heading {
 	color:#048C94		;
-	text-shadow: 0 4px black;
+	font-family: ubuntu;
+	/* text-shadow: 0 4px black; */
 }
 #intro .intro-body .intro-text {
 	font-size: 18px;
@@ -284,6 +432,7 @@ hr {
 	letter-spacing: 1px;
 	margin-bottom: 100px;
 	color: #F38C2C	;
+	font-family: ubuntu;
 }
 }
 
@@ -302,7 +451,52 @@ hr {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
-
+.js .animate-box {
+	opacity: 0;
+  }
+  .feature-center {
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	width: 100%;
+	margin-bottom: 40px;
+  }
+  .feature-center .icon {
+	width: 90px;
+	height: 90px;
+	display: table;
+	text-align: center;
+	margin: 0 auto 40px auto;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+  }
+  #gtco-counter .counter-label {
+	margin-bottom: 0;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.5);
+	letter-spacing: .1em;
+  }
+  .feature-center .icon i {
+	display: table-cell;
+	vertical-align: middle;
+	height: 90px;
+	font-size: 40px;
+	line-height: 40px;
+	color: #cccccc;
+  }
+  .feature-center p, .feature-center h3 {
+	margin-bottom: 30px;
+  }
+  .feature-center h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #66D37E;
+	position: relative;
+  }
+  
 /* Sizes
 ------------------------------ */
 .s-icon--sm {
@@ -414,6 +608,9 @@ hr {
 	font-weight: 600;
 	padding-right: 10px;
 	color: #048C94	;
+}
+.emaill{
+	color: #048C94;
 }
 #about i.fa {
 	float: left;
@@ -542,6 +739,41 @@ ol.type li a:hover {
 	opacity: 0;
 	transition: all 0.5s;
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 .hover-bg .hover-text>h4 {
 	opacity: 0;
 	-webkit-transform: translateY(100%);
@@ -607,6 +839,14 @@ img.img-thumbnail.team-img {
 	padding: 9px;
 	color: #777;
 }
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
 /* Testimonials Section */
 #testimonials {
 	background: url(../img/testimonials-bg.jpg);
