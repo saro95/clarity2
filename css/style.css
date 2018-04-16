@@ -5,7 +5,11 @@ body, html {
 	color: #777;
 	width: 100% !important;
 	height: 100% !important;
+<<<<<<< HEAD
+	/*overflow-x: hidden;*/
+=======
 	/* overflow-x: hidden; */
+>>>>>>> ee9220eaf0897ee0e3c283eec078e718fa5c71da
 }
 h1 {
 	font-weight: 700;
