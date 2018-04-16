@@ -4,6 +4,8 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <!-- <link rel="shortcut icon" href="../../templates/vg_cacoon/favicon.ico" type="image/x-icon" /> -->
 
 <title>CLARITY</title>
@@ -11,6 +13,11 @@
 
 <meta name="description" content="">
 <meta name="author" content="">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
 <!-- Bootstrap -->
 <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
@@ -21,7 +28,6 @@
 <link rel="stylesheet" type="text/css"  href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/modernizr.custom.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +36,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div id="preloader">
   <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
@@ -56,14 +66,9 @@
         <li> <a class="page-scroll" href="#works">Sucess Partners</a> </li>
         <li> <a class="page-scroll" href="#team">Team</a> </li>
         <li> <a class="page-scroll" href="#testimonials">Testimonials</a> </li>
+        <li> <a class="page-scroll" href="#iso">ISO</a> </li>
+
         <li> <a class="page-scroll" href="#contact">Contact</a> </li>
-          <!-- <li> <a class="page-scroll" href="vv.html">More2</a> </li> -->
-    
-							<!-- <li><a href="https://www.facebook.com/claritycqc/"><i class="icon-facebook" style="color:beige"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-instagram"></i></a></li> -->
-						
       </ul>
     </div>
     <!-- /.navbar-collapse --> 
@@ -75,34 +80,103 @@
 <div id="intro">
   <div class="intro-body">
     <div class="container">
-      <!-- <div class="row">
+      <div class="row">
+
+    
               <div class="clar">CLARITY</div>
               <div class="col-md-10 col-md-offset-1">
-                  <h1> <span class="brand-heading">
-                     QUALITY FOR LIFE</span></h1>
-          <br>          
+                  <!-- <h1> <span class="brand-heading">
+                     QUALITY FOR LIFE</span></h1> -->
+  
+                     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+                     <h1 class="text-rotate">
+                        <span class="txt-rotate"data-period="2000"
+                  data-rotate='[ "QUALITY FOR LIFE.", "QUALITY.", "Consultations.", "CQC.", "PURE!" ]'></span>
+             </h1>
+          <br> 
+          <br>   
+          <br> 
+          <br>   
+          <br>   
+          <br> 
+                   
           <a href="https://www.facebook.com/claritycqc/videos/247410425790124" class="btn btn-default btn-lg popup-vimeo">Watch the video</a> 
           <br>   
           <br> 
           <br>   
-          <br> 
-          <br>   
-          <br> 
-               
+       
+                  <script>
+                  var TxtRotate = function(el, toRotate, period) {
+                  this.toRotate = toRotate;
+                  this.el = el;
+                  this.loopNum = 0;
+                  this.period = parseInt(period, 10) || 2000;
+                  this.txt = '';
+                  this.tick();
+                  this.isDeleting = false;
+                };
+                
+                TxtRotate.prototype.tick = function() {
+                  var i = this.loopNum % this.toRotate.length;
+                  var fullTxt = this.toRotate[i];
+                
+                  if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                  } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                  }
+                
+                  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+                
+                  var that = this;
+                  var delta = 300 - Math.random() * 100;
+                
+                  if (this.isDeleting) { delta /= 2; }
+                
+                  if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                  } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 500;
+                  }
+                
+                  setTimeout(function() {
+                    that.tick();
+                  }, delta);
+                };
+                
+                window.onload = function() {
+                  var elements = document.getElementsByClassName('txt-rotate');
+                  for (var i=0; i<elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-rotate');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                    }
+                  }
+                  // INJECT CSS
+                  var css = document.createElement("style");
+                  css.type = "text/css";
+                  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+                  document.body.appendChild(css);
+                };</script>
           <a href="#about" class="btn page-scroll"><img src="img/arrow.png" ></a>
           </div>
-      </div> -->
+          
+      </div>
       <div class="background-wrap">
          <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
-           <source src="v/video11.mp4" type="video/mp4">
+           <source src="v/video22.mp4" type="video/mp4">
             v not supported
          </video>
 
       </div>
-      <div class="content">
+      <!-- <div class="content">
         <h1 style="font-size: 900%">CLARITY</h1>
         <h3>QUALITY FOR LIFE</h3>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -130,9 +204,36 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-<img src="img/test.jpg" style="width:100%">
+<!-- <img src="img/test.jpg" style="width:100%"> -->
+<div class="w3-content w3-section" style="max-width:500px"  id="slideshow">
+    <img class="mySlides w3-animate-fading" src="img/slide1.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="img/slide5.jpg" style="width:80%">
+  <img class="mySlides w3-animate-fading" src="img/slide3.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="img/slide4.jpg" style="width:100%">
+<h3 class="slidee">clarity-cqc</h3>
+  </div>
+  
+  <script>
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 5000);    
+      }
+      </script>
+  
+    
+  
+   </div>
 
-      </div>
       <div class="col-md-4">
         <div class="about-text">
           <h4>Who We Are</h4>
@@ -247,7 +348,7 @@
           <p>EFQM & TQM Consultancy.</p>
         </div>
       </div>
-      <div class="col-md-2 col-sm-6">
+      <!-- <div class="col-md-2 col-sm-6">
         <div class="service"><img src="img/six-sigma.png" style="width:40%">
           <h3>Six Sigma</h3>
           <p>Six Sigma Consultancy.</p>
@@ -259,7 +360,7 @@
           <p>Lean manufacturing Consultancy.
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="col-md-2 col-sm-6">
         <div class="service"> <img src="img/iso-9001_2015.png" style="width:50%">
           <h3>ISO</h3>
@@ -294,7 +395,7 @@
     </div>
     <div class="row">
       <div class="portfolio-items">
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
+        <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="img/Nuqul.png" title="Project description" rel="prettyPhoto">
               <div class="hover-text">
@@ -302,7 +403,7 @@
               </div>
               <img src="img/Nuqul.png" class="img-responsive" alt="Nuqul Group"> </a> </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 consectetur">
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="img/bank3.jpg" title="Project description" rel="prettyPhoto">
@@ -330,7 +431,7 @@
               <img src="img/fine.jpg" class="img-responsive" alt="Fine"> </a> </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 consectetur">
+        <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 consectetur">
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="img/sgs2.png" title="Project description" rel="prettyPhoto">
               <div class="hover-text">
@@ -338,14 +439,14 @@
               </div>
               <img src="img/sgs2.png" class="img-responsive" alt="sgs"> </a> </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 dapibus">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/sana.jpg" title="Project description" rel="prettyPhoto">
+            <div class="hover-bg"> <a href="img/sanabel.png" title="Project description" rel="prettyPhoto">
               <div class="hover-text">
                 <h4>Project Title</h4>
               </div>
-              <img src="img/sana.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="img/sanabel.png" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 dapibus consectetur">
@@ -377,150 +478,354 @@
     <div class="section-title center">
       <h2>Meet the team</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
-    </div>
-    <div id="row">
-      <div class="col-xs-6 col-md-3 col-sm-6">
-        <div class="thumbnail"> <img src="img/team/01.jpg" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>John Doe</h3>
-            <p>Founder / CEO</p>
-          </div>
+      <h3>"PLEASURE IN THE JOB
+          PUTS PERFECTION
+          IN THE WORK."   </h3><p>Aristotle</p> <div id="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="team-member">
+                <div class="team-img">
+                    <img src="img/man.PNG" alt="team member" class="img-responsive">
+                </div>
+                <div class="team-hover">
+                    <div class="desk">
+                        <h4>Hi There !</h4>
+                        <p>Leadership is practiced not so much in words as in attitude and in actions.
+                            </p>
+                    </div>
+                    <div class="s-link">
+                        <a href="https://www.facebook.com/saed.alawneh1?lst=100001640698952%3A100001103871262%3A1523778841"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/saed-alawneh-5636163b/"><i class="fa fa-linkedin"></i></a>
+                        <a href="gm@clarity-cqc.com"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-title">
+                <h5>DR.SA'ED ALAWNEH </h5>
+                <span>  GENERAL MANAGER  &amp; founder</span>
+            </div>
         </div>
-      </div>
-      <div class="col-xs-6 col-md-3 col-sm-6">
-        <div class="thumbnail"> <img src="img/team/02.jpg" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Mike Doe</h3>
-            <p>Web Designer</p>
-          </div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="team-member">
+                <div class="team-img">
+                    <img src="img/546.PNG" alt="team member" class="img-responsive">
+                </div>
+                <div class="team-hover">
+                    <div class="desk">
+                        <h4>Hi There !</h4>
+                        <p>The art of communication is the language of leadership. 
+                        </p>
+                    </div>
+                    <div class="s-link">
+                        <a href="https://www.facebook.com/yasmeen.abuoun"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/yasmeen-abu-oun-8195b9137/"><i class="fa fa-linkedin"></i></a>
+                        <a href="support@clarity-cqc.com "><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-title">
+                <h5>Yasmeen Abu Oun</h5>
+                <span>Project Coordinator</span>
+            </div>
         </div>
-      </div>
-      <div class="col-xs-6 col-md-3 col-sm-6">
-        <div class="thumbnail"> <img src="img/team/03.jpg" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Jane Doe</h3>
-            <p>Creative Director</p>
-          </div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="team-member">
+                <div class="team-img">
+                    <img src="img/213.PNG" alt="team member" class="img-responsive">
+                </div>
+                <div class="team-hover">
+                    <div class="desk">
+                        <h4>Hello World</h4>
+                        <p>I love to introduce myself as a hardcore Web Designer.</p>
+                    </div>
+                    <div class="s-link">
+                        <a href="https://www.facebook.com/sara.ghassan15"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/sara-ghassan-72589815b/"><i class="fa fa-linkedin"></i></a>
+                        <a href="sara.ghassan249@gmail.com"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-title">
+                <h5>Sara Ghassan</h5>
+                <span>Developer</span>
+            </div>
         </div>
-      </div>
-      <div class="col-xs-6 col-md-3 col-sm-6">
-        <div class="thumbnail"> <img src="img/team/04.jpg" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Larry Show</h3>
-            <p>Project Manager</p>
-          </div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+            <div class="team-member">
+                <div class="team-img">
+                    <img src="img/ayham2.jpeg" alt="team member" class="img-responsive">
+                </div>
+                <div class="team-hover">
+                    <div class="desk">
+                        <h4>I love to design</h4>
+                        <p>I love to introduce myself as a hardcore Web Designer.</p>
+                    </div>
+                    <div class="s-link">
+                        <a href="https://www.facebook.com/ayhamz1"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ayham-zaid-113837159"><i class="fa fa-linkedin"></i></a>
+                        <a href="ayham.zaid1995@gmail.com "><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-title">
+                <h5>Ayham Zaid</h5>
+                <span>Developer</span>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Testimonials Section -->
-<div id="testimonials" class="text-center">
-  <div class="container">
-    <div class="section-title center">
-      <h2>What our clients say</h2>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="row testimonials">
-          <div class="col-sm-3">
-            <blockquote><i class="fa fa-quote-left"></i>
-              <p>They understand our needs .</p>
-              <br>
-              <div class="clients-name">
-                One of the best
-
-              </div>
-            </blockquote>
-          </div>
-          <BR>
-          <div class="col-sm-3">
-            <blockquote><i class="fa fa-quote-left"></i>
-              Happy to recommend   .
-              <br>
-            <br>
-              <div class="clients-name">
-                <br>
-               Doing a great job for us
-              
-
-              </div>
-            </blockquote>
-          </div>
-          <div class="col-sm-3">
-            <blockquote><i class="fa fa-quote-left"></i>
-              <p>Highly professional approach                .</p>
-              <div class="clients-name">
-                Excellent partner
-
-              </div>
-            </blockquote>
-          </div>
-          <div class="col-sm-3">
-            <blockquote><i class="fa fa-quote-left"></i>
-              <p>Professional, knowledgeable and responsive                .</p>
-              <div class="clients-name">
-                Enthusiastic, determined and skilled
-
-              </div>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- facts section
-
-<div id="gtco-counter" class="gtco-section">
-  <div class="gtco-container">
-
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-        <h1>Facts</h1>
-
-        <h3>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</h3>
-      </div>
-    </div>
-
-    <div class="row">
-      
-      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-        <div class="feature-center">
-          <span class="counter js-counter" data-from="0" data-to="196" data-speed="5000" data-refresh-interval="50">1</span>
-          <span class="counter-label">Clients</span>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-        <div class="feature-center">
-          <span class="counter js-counter" data-from="0" data-to="97" data-speed="5000" data-refresh-interval="50">1</span>
-          <span class="counter-label">Projects</span>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-        <div class="feature-center">
-          <span class="counter js-counter" data-from="0" data-to="12402" data-speed="5000" data-refresh-interval="50">1</span>
-          <span class="counter-label">Coffee</span>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-        <div class="feature-center">
-          <span class="counter js-counter" data-from="0" data-to="12202" data-speed="5000" data-refresh-interval="50">1</span>
-          <span class="counter-label">Line of codes</span>
-
-        </div>
-      </div>
         
+        
+
+    </div>
+
+</div>
+  </div>
+  <!-- Testimonials Section -->
+<div id="testimonials" class="text-center">
+    <div class="container">
+      <div class="section-title center">
+        <h2>What our clients say</h2>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="row testimonials">
+            <div class="col-sm-3">
+              <blockquote><i class="fa fa-quote-left"></i>
+                <p>They understand our needs .</p>
+                <br>
+                <div class="clients-name">
+                  One of the best
+  
+                </div>
+              </blockquote>
+            </div>
+            <BR>
+            <div class="col-sm-3">
+              <blockquote><i class="fa fa-quote-left"></i>
+                Happy to recommend   .
+                <br>
+              <br>
+                <div class="clients-name">
+                  <br>
+                 Doing a great job for us
+                
+  
+                </div>
+              </blockquote>
+            </div>
+            <div class="col-sm-3">
+              <blockquote><i class="fa fa-quote-left"></i>
+                <p>Highly professional approach                .</p>
+                <div class="clients-name">
+                  Excellent partner
+  
+                </div>
+              </blockquote>
+            </div>
+            <div class="col-sm-3">
+              <blockquote><i class="fa fa-quote-left"></i>
+                <p>Professional, knowledgeable and responsive                .</p>
+                <div class="clients-name">
+                  Enthusiastic, determined and skilled
+  
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div> -->
+
+<!--facts section -->
+
+<section id="facts" class="facts">
+  <div class="parallax-overlay">
+    <div class="container">
+      <div class="row number-counters">
+        
+        <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+          <h2>Some Fun Facts</h2>
+          <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+        </div>
+        
+        <!-- first count item -->
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+          <div class="counters-item">
+            <i class="fa fa-clock-o fa-3x"></i>
+            <strong data-to="3200">0</strong>
+            <!-- Set Your Number here. i,e. data-to="56" -->
+            <p>Hours of Work</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+          <div class="counters-item">
+            <i class="fa fa-users fa-3x"></i>
+            <strong data-to="120">0</strong>
+            <!-- Set Your Number here. i,e. data-to="56" -->
+            <p>Satisfied Clients</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+          <div class="counters-item">
+            <i class="fa fa-rocket fa-3x"></i>
+            <strong data-to="360">0</strong>
+            <!-- Set Your Number here. i,e. data-to="56" -->
+            <p> Projects Delivered </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+          <div class="counters-item">
+            <i class="fa fa-trophy fa-3x"></i>
+            <strong data-to="6454">0</strong>
+            <!-- Set Your Number here. i,e. data-to="56" -->
+            <p>Awards Won</p>
+          </div>
+        </div>
+        <!-- end first count item -->
+    
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<div id="Certificates" class="text-center">
+
+    <div class="container">
+        <div class="section-title center">
+            <h2>Certificates of ISO</h2>
+            <hr>
+          </div>
+  
+          <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/9001.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 9001</h1>
+                      <button class="info" data-toggle="modal" data-target="#myModal3">Learn More
+                      </button>
+                      <div class="modal fade" id="myModal3" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/e1.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 14001</h1>
+                      <a class="info" href="#" data-toggle="modal" data-target="#myModal">Learn More</a>
+                  
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+  
+          <div class="clearfix visible-sm-block"></div>
+  
+          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/17025.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 17025</h1>
+                      <button class="info" data-toggle="modal" data-target="#modal3">Learn More
+                      </button>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="clearfix visible-md-block"></div>
+  
+          <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/tra.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 17100</h1>
+                      <button class="info" data-toggle="modal" data-target="#modal4">Learn More
+                      </button>
+                  </div>
+              </div>
+          </div> -->
+  
+          <div class="clearfix visible-sm-block"></div>
+  
+  
+          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/18001.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 18001</h1>
+                      <button class="info" data-toggle="modal" data-target="#modal4v2">Learn More
+                      </button>
+                  </div>
+              </div>
+          </div>
+  
+  
+          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/22000.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 22000</h1>
+                      <button class="info" data-toggle="modal" data-target="#modal1v2">Learn More
+                      </button>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="clearfix visible-md-block"></div>
+  
+          <div class="clearfix visible-sm-block"></div>
+  
+          <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/236.jpg" alt="">
+                  <div class="overlay">
+                      <h1>ISO 22301</h1>
+                      <button class="info" data-toggle="modal" data-target="#modal5">Learn More
+                      </button>
+                  </div>
+              </div>
+          </div>   -->
+          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="hovereffect">
+                  <img class="img-responsive" src="img/27000.jpg" alt=""> 
+                  <div class="overlay point" data-toggle="modal" data-target="#modal6">
+                      <h1>ISO 27000</h1>
+                      <button class="info" data-toggle="modal" data-target="#modal5">Learn More
+                        </button>
+                  </div>
+          </div>
+          </div>
+  </div>
+  </div>
+  </div>
+  
 <!-- Contact Section -->
 <div id="contact" class="text-center">
   <div class="container">
     <div class="section-title center">
+   
       <h2>Contact us</h2>
       <hr>
       <p>Big Business is always open for communication on whatever questions you may have.
@@ -542,7 +847,7 @@
               <p>Our Location in Amman-Jordan :</p>
               <p> AlWefaq Street, Suite 303
                   Amman, Jordan -</p>
-                <p ><a href="https://goo.gl/maps/78GbeGTr3kr"></a></p>
+                <p ><a href="https://goo.gl/maps/78GbeGTr3kr"></a></h3>
               <img src="img/mapjo.PNG">
             </div>
           
@@ -556,9 +861,11 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>Our Location in America :</p>
-    <p> USA-1465 Stafford VA 22554 USA</p>
+    <p> 6550 Loisdale Ct
+        Springfield, VA 22150
+        USA</p>
       <p ><a href="https://goo.gl/maps/78GbeGTr3kr"></a></p>
-    <img src="img/mapamerica.PNG">
+    <img src="img/map2.PNG">
   </div>
 
 </div>
@@ -572,8 +879,8 @@
       </div>
       <div class="col-md-4">
         <div class="contact-item"> <i class="fa fa-phone fa-2x"></i>
-          <p class="emaill"> +962 6 516 94 95<br>
-            +962 798915534</p>
+          <p class="emaill"> +962 6 516 95 95<br>
+            +962 776177616</p>
         </div>
       </div>
       
@@ -639,11 +946,34 @@ window.onclick = function(event) {
       }
   }
   </script> 
+  
    <div class="col-md-8 col-md-offset-2">
    
    
       <div class="social">
-        <h3>Follow us</h3>
+        <h3>---------- </h3>
+        <div class="container">
+            <div class="coast">
+              <div class="wave-rel-wrap">
+                <div class="wave"></div>
+              </div>
+            </div>
+            <div class="coast delay">
+              <div class="wave-rel-wrap">
+                <div class="wave delay"></div>
+              </div>
+            </div>
+            <div class="text1 text-w">F</div>
+            <div class="text1 text-a">O</div>
+            <div class="text1 text-v">L</div>
+            <div class="text1 text-e">L</div>
+            <div class="text1 text-c">O</div>
+            <div class="text1 text-o">W</div>
+            <div class="text1 text-n"></div>
+            <div class="text1 text-t">  </div>
+            <div class="text1 text-u">U</div>
+            <div class="text1 text-s">S</div>
+          
         <ul>
           <li><a href="https://www.facebook.com/claritycqc/"><i class="fa fa-facebook"></i></a></li>
           <li><a href="https://twitter.com/claritycqc"><i class="fa fa-twitter"></i></a></li>
@@ -698,5 +1028,10 @@ window.onclick = function(event) {
 <!-- Javascripts
     ================================================== --> 
 <script type="text/javascript" src="js/main.js"></script>
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'eElEA9E64r';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>
